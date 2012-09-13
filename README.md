@@ -39,3 +39,10 @@ Suppose we want to access the Unix-like command line arguments passed into our G
       //NOTE: Get(flag string) returns an error if either flag is not
       //passed in on the command line or a consuming Option is passed in without a value
     }
+    
+## Running the test suite
+Giggalo has a test suite under Giggalo/tests. To build & run it, simply do this:
+
+    git clone https://github.com/daviejaneway/Giggalo
+    cd Giggalo
+    go run tests/*.c4g.go
