@@ -53,23 +53,3 @@ func (opts OptGroup) Get(s string) (interface{}, error) {
   
   return false, errors.New(fmt.Sprintf("'%s' option not found", s))
 }
-
-/*var opts = OptGroup{
-  options: []Option{
-    Option{id:"r", longid:"recursive"}}}
-
-func main() {
-  err := opts.parse([]string{"-r"})
-  
-  if err != nil {
-    fmt.Println(err)
-  } else {
-    v, err := opts.Get("r")
-    
-    if err != nil {
-      fmt.Println(err)
-    } else {
-      fmt.Printf("-r : %v", v)
-    }
-  }
-}*/
