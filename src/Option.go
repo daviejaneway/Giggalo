@@ -9,6 +9,13 @@ const (
   OPTION_TYPE_LONG  = 1 << iota
 )
 
+type OPTION_TYPE uint8
+
+const (
+  OPTION_TYPE_SHORT = 1 << iota
+  OPTION_TYPE_LONG  = 1 << iota
+)
+
 type Option struct {
   Id, Longid, Value string
   Consume, state bool
