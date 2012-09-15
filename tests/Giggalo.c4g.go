@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "github.com/daviejaneway/C4G/src"
 import "github.com/daviejaneway/C4GUnit/src"
-import "github.com/daviejaneway/Giggalo/src"
+//import "github.com/daviejaneway/Giggalo"
 
 var contract = C4GUnit.TestContract{
   Conditions: []C4G.Condition{
