@@ -1,4 +1,4 @@
-package core
+package Giggalo
 
 type Option struct {
   Id, Longid string

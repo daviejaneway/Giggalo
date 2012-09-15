@@ -1,4 +1,4 @@
-package core
+package Giggalo
 
 import "fmt"
 import "errors"
