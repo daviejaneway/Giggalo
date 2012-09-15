@@ -17,15 +17,23 @@ type OptGroup struct {
   Options []Option
 }
 
+func isShortOption(opt, expected string) bool {
+  return opt == fmt.Sprintf("-%s", expected)
+}
+
+func canConsume(opt *Option, args []string, i int) bool {
+  return opt.Consume && len(args) > (i + 1)
+}
+
 func (opts OptGroup) Parse(args []string) error {
   for i := 0; i < len(args); i++ {
     for j := 0; j < len(opts.Options); j++ {
       opt := &opts.Options[j]
       
-      if args[i] == fmt.Sprintf("-%s", opt.Id) {
+      if isShortOption(args[i], opt.Id) { //args[i] == fmt.Sprintf("-%s", opt.Id) {
         opt.state = true
         
-        if opt.Consume && len(args) > (i + 1) {
+        if canConsume(opt, args, i) { //opt.Consume && len(args) > (i + 1) {
           i += 1
           opt.Value = args[i]
         } else if opt.Consume && len(args) <= (i + 1) {
