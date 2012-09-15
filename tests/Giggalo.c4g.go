@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "github.com/daviejaneway/C4G/src"
 import "github.com/daviejaneway/C4GUnit/src"
-import "github.com/daviejaneway/Giggalo/core"
+import "github.com/daviejaneway/Giggalo/src"
 
 var contract = C4GUnit.TestContract{
   Conditions: []C4G.Condition{
@@ -19,6 +19,11 @@ func testNonConsumingShortOption() {
   opts.Parse([]string{"-r"})
   
   v, err := opts.Get("r")
+  
+  contract.Assert(0, err == nil)
+  contract.Assert(1, v == true)
+  
+  v, err = opts.Get("recursive")
   
   contract.Assert(0, err == nil)
   contract.Assert(1, v == true)
