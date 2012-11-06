@@ -18,7 +18,7 @@ The Giggalo package itself can be installed with
     
 ## Example
 Suppose we want to access the Unix-like command line arguments passed into our Go program. Giggalo can parse them into a neat bundle for us, like so:
-
+```go
     func main() {
       //First, define the options we are looking for
       opts := Giggalo.OptGroup{
@@ -39,6 +39,7 @@ Suppose we want to access the Unix-like command line arguments passed into our G
       //NOTE: Get(flag string) returns an error if either flag is not
       //passed in on the command line or a consuming Option is passed in without a value
     }
+```
     
 ## Running the test suite
 Giggalo has a test suite under Giggalo/tests. To build & run it, simply do this:
